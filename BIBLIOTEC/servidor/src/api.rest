@@ -1,0 +1,181 @@
+### consultar todos los libros
+GET http://localhost:3000/libros
+
+
+### consultar libros
+GET http://localhost:3000/libros/2
+
+###agregar un libro
+POST http://localhost:3000/libros
+Content-Type: application/json
+
+  {
+    
+    
+    "titulo": "El arte de amar",
+    "autores": "Erik From",
+    "estatus": "D",
+    "clasificacion": "Novela",
+    "id_editorial": 7,
+    "ubicacion": "B07"
+  }
+
+  
+### actualizar libro
+PUT http://localhost:3000/libros/5
+Content-Type: application/json
+
+ {
+    "id_libro": 5, 
+    "titulo": "El arte de amar",
+    "autores": "Erik From",
+    "estatus": "P",
+    "clasificacion": "Novela",
+    "id_editorial": 7,
+    "ubicacion": "B07"
+  }
+
+
+### eliminar un libro
+DELETE http://localhost:3000/libros/5
+
+### consultar libro por titulo 
+GET http://localhost:3000/consultas/titulo/El principito
+
+### consultar libro por autores
+GET http://localhost:3000/consultas/autor/Gabriel García Márques
+
+### consultar libros por clasificacion
+GET http://localhost:3000/consultas/clasificacion/Novela
+
+
+### consultar todos los alumnos
+GET http://localhost:3000/alumnos
+
+### consultar un alumno
+GET http://localhost:3000/alumnos/1222100511
+
+###agregar un alumno
+POST http://localhost:3000/alumnos
+Content-Type: application/json
+
+{
+   "id_alumno": "1222100511 Cortez",
+    "nombre": "Maria Guadalupe Balderas",
+    "id_carrera": 8,
+    "cuatrimestre":1,
+    "genero":"m",
+    "correo":"lupitabalderas@utng.com",
+    "estatus": "D"
+}
+    
+### actualizar un alumno
+PUT http://localhost:3000/alumnos/1222100511
+Content-Type: application/json
+
+{
+   "id_alumno": "1222100511 Cortez",
+    "nombre": "Maria Guadalupe Balderas",
+    "id_carrera": 8,
+    "cuatrimestre":1,
+    "genero":"m",
+    "correo":"lupitabalderas@utng.com",
+    "estatus": "A"
+}
+
+
+### eliminar un alumno
+DELETE http://localhost:3000/alumnos/1222100511
+
+
+### agregar usuario
+POST http://localhost:3000/usuarios
+Content-Type: application/json
+
+{
+  "id_usuario": 1222100802,
+  "usuario":"Julio Pedro Julian Cruzito Luna",
+  "correo":"maquinadefuego@gmail.com",
+  "contrasena":"sharkDJ"
+}
+
+### Mostrar usuarios
+GET http://localhost:3000/usuarios
+
+### Eliminar usuario
+DELETE http://localhost:3000/usuarios/1222100231
+
+### Actualizar Usuario
+PUT http://localhost:3000/usuarios/1222100496
+{
+  {
+    "id_usuario": 1222100496,
+    "usuario": "Oliver Zaid Vazquez",
+    "correo": "zavaqz@gmail.com",
+    "contrasena": "holamundo123"
+  }
+}
+
+
+### Obtener prestamos
+GET http://localhost:3000/Prestamos
+
+### Insertar prestamo
+POST http://localhost:3000/Prestamos
+Content-Type: application/json
+
+ {
+    "id_prestamo": 2,
+    "id_alumno": "1222100498",
+    "id_libro": 2,
+    "id_usuario":1222100498,
+    "estatus": "D",
+    "fecha_prestamo":"2023/08/03",
+    "fecha_devolucion":"2023/08/05"
+  }
+
+### Eliminar prestamos
+DELETE http://localhost:3000/Prestamos/2 
+
+### Actualizar prestamos
+PUT http://localhost:3000/Prestamos/1
+Content-Type: 
+ {
+   "id_prestamo": 1,
+    "id_alumno": "1222100777",
+    "id_libro": 1,
+    "id_usuario":1222100777,
+    "estatus": "R",
+    "fecha_prestamo":"2023/08/03",
+    "fecha_devolucion":"2023/08/05"
+  }
+  
+### consultar multas
+GET http://localhost:3000/Multas 
+ 
+### consultar multas
+GET http://localhost:3000/Multas/3
+
+### Insertar multa
+POST http://localhost:3000/Multas
+Content-Type: application/json
+
+{
+  "id_multa": 3,
+  "id_prestamo": 3,
+  "monto": 1,
+  "id_usuario":1222100810
+}
+
+### Eliminar multas
+DELETE http://localhost:3000/Multas/3
+
+### Actualizar multa
+PUT  http://localhost:3000/Multas/9
+
+
+### Ver carreras
+GET http://localhost:3000/carreras
+
+### ver editoriales
+GET http://localhost:3000/editoriales

@@ -1,0 +1,69 @@
+<div class="card col-md-11 mt-4 mx-auto">
+  <body>
+    <div class="card col-md-12 mt-4 mx-auto">
+      <div class="card-header bt-info text-center">
+        <h5 style="font-size: 35px;color: rgb(105, 89, 204); font-family: Verdana, Geneva, Tahoma, sans-serif;">Consultas</h5>
+      </div>
+    </div>
+      <div class="contenedor" style="display: flex; justify-content: flex-end; align-items: center;">
+        <button type="button" class="btn btn-primary" onclick="location.href='perfil'" style="width: 120px; height: 40px;">Visitar Perfil</button>
+      </div>
+      <br>
+      <form class="d-flex" action="reservar-libros" #consultaForm="ngForm">
+    
+        <div class="a" style="display: flex;">
+          <input class="form-control me-2" type="text" placeholder="Título" [(ngModel)]="libroService.libro.titulo" name="titulo">
+          <input class="form-control me-2" type="text" placeholder="Autor" [(ngModel)]="libroService.libro.autores" name="autores">
+         
+        </div>
+       
+        <div class="botonb">
+        <button type="button" class="btn btn-success" style="height: 40; " (click)="getLibroByTitulo(consultaForm)">Buscar Titulo</button>
+        <button type="button" class="btn btn-success" style="height: 40; " (click)="getLibroByAutor(consultaForm)">Buscar Autor</button>
+      </div>
+      </form>
+
+      <style>
+        table {
+          border: 1px solid slateblue;
+          width: 100%;
+          margin: 15px 15px;
+        }
+        th, td {
+          border: 1px solid slateblue;
+        }
+      </style>
+      <div class="tabla">
+      <div class="col-md-12 table-contairner">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Id libro</th>
+              <th>Título</th>
+              <th>Autor</th>
+              <th>Estatus</th>
+              <th>Clasificación</th>
+              <th>Editorial</th>
+              <th>Ubicación</th>
+              <th>Operación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of libroService.libros">
+              <td>{{item.id_libro}}</td>
+              <td>{{item.titulo}}</td>
+              <td>{{item.autores}}</td>
+              <td>{{item.estatus}}</td>
+              <td>{{item.clasificacion}}</td>
+              <td>{{item.editorial}}</td>
+              <td>{{item.ubicacion}}</td>
+              <td><button type="button" class="btn btn-secondary">Reservar</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+  </div>
+
+  

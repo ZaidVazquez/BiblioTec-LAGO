@@ -1,0 +1,37 @@
+.Texto{
+    text-align: justify;
+    color: slateblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: x-large;
+    padding: 20px;
+}
+p{
+    text-align: justify;
+    color: slateblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    padding: 15px;
+}
+body{
+    background-color: rgb(201, 224, 255);
+
+}
+#demo{
+    display: right;
+}
+.carousel, .carousel-inner > .item > .img{
+    height: 800px;
+}
+.card-img-overlay{
+    padding: 50px;
+    float: right; 
+    height: 50px;
+    
+    margin-top: 200px;
+}
+h1{
+    color: slateblue;
+}
+h2{
+    color: slateblue;
+}

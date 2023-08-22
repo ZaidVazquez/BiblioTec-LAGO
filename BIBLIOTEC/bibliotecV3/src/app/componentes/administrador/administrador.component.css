@@ -1,0 +1,26 @@
+.full-width {
+  width: 100%;
+}
+body{
+  background: slateblue;
+  
+}
+.container {
+  height: 80vh;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  background: white;
+  padding: 20px;
+  height: 200px;
+  width: 200px;
+}
+button{
+  color: white;
+  background-color: slateblue;
+  background: slateblue;
+}

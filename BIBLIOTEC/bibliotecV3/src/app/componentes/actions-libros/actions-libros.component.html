@@ -1,0 +1,116 @@
+<div class="row">
+  <h2 class="mb-2">BAJAS Y ALTAS LIBROS</h2>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="contenedor text-center">
+      <form class="formulario full-width" #libroForm="ngForm">
+        <h3>libros</h3>
+        <div class="row align-items-center mb-5">
+          <div class="col-3" style="text-align: justify">Id Libro:</div>
+          <div class="col-9">
+            <input type="text" class="full-width" name="id_libro" [(ngModel)]="libroService.libro.id_libro" />
+          </div>
+        </div>
+        <div class="row align-items-center mb-5">
+          <div class="col-3" style="text-align: justify">Titulo:</div>
+          <div class="col-9">
+            <input type="text" class="full-width" name="titulo"
+            [(ngModel)]="libroService.libro.titulo" />
+          </div>
+        </div>
+        <div class="row align-items-center mb-5">
+          <div class="col-3" style="text-align: justify">Autor:</div>
+          <div class="col-9">
+            <input type="text" class="full-width" name="autores"
+            [(ngModel)]="libroService.libro.autores" />
+          </div>
+        </div>
+        <div class="row align-items-center mb-5">
+          <div class="col-3" style="text-align: justify">Estatus:</div>
+          <div class="col-9">
+            <select name="estatus" [(ngModel)]="libroService.libro.estatus" id="estatus" class="full-width">
+              <option value="D" selected>D</option>
+              <option value="R">R</option>
+            </select>
+          </div>
+        </div>
+        <div class="row align-items-center mb-5">
+          <div class="col-3" style="text-align: justify">Clasificación:</div>
+          <div class="col-9">
+            <select class="form-select" [(ngModel)]="libroService.libro.clasificacion" name="clasificacion">
+              <option selected>Clasificacion</option>
+              <option >Ciencia ficcion</option>
+              <option >Matemáticas</option>
+              <option >Química</option>
+              <option >Psicología</option>
+              <option >Literatura</option>
+              <option >Novela</option>
+            </select> 
+          </div>
+          </div>
+        <div class="row align-items-center mb-5">
+          <div class="col-3" style="text-align: justify">Editorial:</div>
+          <div class="col-9">
+            <select name="editorial" [(ngModel)]="editorialService.editorial.editorial" id="editorial" class="full-width">
+              <option *ngFor="let editorial of editorialService.editoriales" [value]="editorial.editorial" selected>
+                {{editorial.editorial}}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="row align-items-center mb-5">
+          <div class="col-3" style="text-align: justify">Ubicación</div>
+          <div class="col-9">
+            <input type="text" class="full-width" name="ubicacion"
+            [(ngModel)]="libroService.libro.ubicacion" />
+          </div>
+      </div>
+        <div class="d-flex justify-content-evenly mb-5">
+          
+          <div class="col-3">
+            <button class="full-width btn-actions"  (click)="createLibro(libroForm)">Alta</button>
+          </div>
+          <div class="col-3">
+            <button class="full-width btn-actions" (click)="updateLibro(libroForm)">Actualizar</button>
+          </div>
+          
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id libro</th>
+          <th>Titulo</th>
+          <th>Autor</th>
+          <th>Estatus</th>
+          <th>Clasificación</th>
+          <th>Editorial</th>
+          <th>Ubicación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of libroService.libros">
+          <td>{{item.id_libro}}</td>
+          <td>{{item.titulo}}</td>
+          <td>{{item.autores}}</td>
+          <td>{{item.estatus}}</td>
+          <td>{{item.clasificacion}}</td>
+          <td>{{item.editorial}}</td>
+          <td>{{item.ubicacion}}</td>
+          <td>
+            <button class="btn btn-secondary btn-sm" (click)="editLibro(item)">
+              <i class="material-icons">edit</i>
+            </button>
+            <button class="btn btn-danger btn-sm" (click)="deleteLibro(item.id_libro)">
+              <i class="material-icons">delete</i>
+          </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

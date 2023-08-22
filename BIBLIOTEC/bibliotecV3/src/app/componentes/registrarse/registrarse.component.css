@@ -1,0 +1,32 @@
+.card{
+    margin-top: 40px;
+    margin-bottom: 50px;
+    padding: 10px;
+    }
+    form{
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+    button{
+        width: 100%;
+    }
+    i{
+        position: absolute;
+        top: 11px;
+        left: 13px;
+    }   
+    
+    .form-control{
+        padding-left: 40px;
+    }
+    
+    .icono{
+    position: relative;
+    }
+    img{
+        height: 115px;
+        width: 150px;
+        margin-top: 0px;
+        margin-bottom: 30px;
+        margin-left: 170px;
+    }

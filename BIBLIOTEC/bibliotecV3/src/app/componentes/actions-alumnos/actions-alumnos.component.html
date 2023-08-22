@@ -1,0 +1,119 @@
+<div class="row">
+  <h2 class="mb-2">BAJAS Y ALTAS ALUMNOS</h2>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="contenedor text-center">
+      <form class="formulario full-width" #alumnoForm="ngForm">
+        <h3>Alumnos</h3>
+        <div class="row align-items-center mb-5">
+          <div class="col-3" style="text-align: justify">No. Control:</div>
+          <div class="col-9">
+            <input type="text" class="full-width" name="id_alumno" [(ngModel)]="alumnosService.alumno.id_alumno" />
+          </div>
+        </div>
+        <div class="row align-items-center mb-5">
+          <div class="col-3" style="text-align: justify">Nombre:</div>
+          <div class="col-9">
+            <input type="text" class="full-width" name="nombre"
+            [(ngModel)]="alumnosService.alumno.nombre" />
+          </div>
+        </div>
+        <div class="row align-items-center mb-5">
+          <div class="col-3" style="text-align: justify">Carrera:</div>
+          <div class="col-9">
+            <select name="id_carrera" [(ngModel)]="carrerasService.carrera.id_carrera" id="id_carrera" class="full-width">
+              <option *ngFor="let carrera of carrerasService.carreras" [value]="carrera.id_carrera" selected>
+                {{carrera.id_carrera}}. {{carrera.carrera}}
+              </option>
+              
+            </select>
+          </div>
+        </div>
+        <div class="row align-items-center mb-5">
+          <div class="col-3" style="text-align: justify">Cuatrimestre:</div>
+          <div class="col-9">
+            <select name="cuatrimestre" [(ngModel)]="alumnosService.alumno.cuatrimestre" id="cuatrimestre" class="full-width">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>  
+            </select>
+          </div>
+        </div>
+        <div class="row align-items-center mb-5">
+          <div class="col-3" style="text-align: justify">Genero:</div>
+          <div class="col-9">
+            <select name="genero" [(ngModel)]="alumnosService.alumno.genero" id="genero" class="full-width">
+              <option value="M" selected>M</option>
+              <option value="F">F</option>
+            </select>
+          </div>
+        </div>
+        <div class="row align-items-center mb-5">
+          <div class="col-3" style="text-align: justify">Correo:</div>
+          <div class="col-9">
+            <input type="text" name="correo" [(ngModel)]="alumnosService.alumno.correo" class="full-width" />
+          </div>
+          </div>
+          <div class="row align-items-center mb-5">
+            <div class="col-3" style="text-align: justify">Estatus:</div>
+            <div class="col-9">
+              <select name="estatus" [(ngModel)]="alumnosService.alumno.estatus" id="estatus" class="full-width">
+                <option value="R" selected>R</option>
+                <option value="B">B</option>
+              </select>
+            </div>
+        </div>
+        <div class="d-flex justify-content-evenly mb-5">
+          
+          <div class="col-3">
+            <button class="full-width btn-actions"  (click)="createAlumno(alumnoForm)">Alta</button>
+          </div>
+          <div class="col-3">
+            <button class="full-width btn-actions" (click)="updateAlumno(alumnoForm)">Actualizar</button>
+          </div>
+          
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>No. Control</th>
+          <th>Nombre del alumno</th>
+          <th>Carrera</th>
+          <th>Cuatrimestre</th>
+          <th>Genero</th>
+          <th>Correo</th>
+          <th>Estatus</th>
+          <th>Operacion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of alumnosService.alumnos">
+          <td>{{item.id_alumno}}</td>
+          <td>{{item.nombre}}</td>
+          <td>{{item.id_carrera}}</td>
+          <td>{{item.cuatrimestre}}</td>
+          <td>{{item.genero}}</td>
+          <td>{{item.correo}}</td>
+          <td>{{item.estatus}}</td>
+          <td>
+            <button class="btn btn-secondary btn-sm" (click)="editAlumno(item)">
+              <i class="material-icons">edit</i>
+            </button>
+            <button class="btn btn-danger btn-sm" (click)="deleteAlumno(item.id_alumno)">
+              <i class="material-icons">delete</i>
+          </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

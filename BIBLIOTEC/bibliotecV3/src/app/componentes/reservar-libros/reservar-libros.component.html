@@ -1,0 +1,67 @@
+<div  class="card col-md-8 mt-6 mx-auto">
+    <div class="card-header bt-info text-center">
+      <h5 style="color: #6a5acd">Reservas</h5>
+    </div>
+    <form action="consultar-libros">
+        <br>
+        <style>
+            table {
+              border:1px solid slateblue;
+              width: 100%;
+              padding: 10px;
+            }
+            th, td {
+              border:1px solid slateblue;
+            }
+    
+            </style>
+          <table>
+            <tr>
+              <th>Título</th>
+              <th>Autor</th>
+              <th>Año</th>
+              <th>Edición</th>
+              <th>Operación</th>
+            </tr>
+            <tr>
+              <td>La Metamorfosis</td>
+              <td>Franz Kafka</td>
+              <td>1916</td>
+              <td>Casa del lobro latam</td>
+              <button type="button" class="btn btn-success">Reservar +</button>
+            </tr>
+            <tr>
+              <td>Cien Años de Soledad</td>
+              <td>Gabriel García Márquez</td>
+              <td>1967</td>
+              <td>Casa del lobro latam</td>
+              <button type="button" class="btn btn-success">Reservar +</button>
+            </tr>
+          </table>
+      <div class="mb-3 mt-3">
+        
+        <input type="text" class="form-control" placeholder="Numero de Control" />
+      </div>
+      <div class="mb-3 mt-3">
+        
+        <input type="text" class="form-control" placeholder="Nombre" />
+      </div>
+       
+          <div class="mb-3 mt-3">
+            <input list="browsers" placeholder="Carrera" />
+            <datalist id="browsers">
+              <option value="Dolores Hidalgo"></option>
+              <option value="Victoria"></option>
+            </datalist>
+          </div>
+          <div class="mb-3 mt-3">
+            <input type="date" id="birthday" name="birthday">
+          </div>
+          <button type="submit" class="btn btn-secondary">Ingresar</button>
+          <div id="emailHelp" class="form-text">
+            Al ingresar, aceptas nuestras Condiciones de uso y Política de
+            privacidad
+          </div>
+      </form>
+    </div>
+  

@@ -1,0 +1,38 @@
+.contenedor{
+  
+padding: 15px;
+margin-right: 20px;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+
+.formulario{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+}
+.table-contairner {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.card{
+ 
+  padding:10px;
+  }
+  .tabla{
+    padding: 10px 10px;
+  }
+ 
+.botonb{
+  margin: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.a{
+  height: 40px;
+  margin: 20px;
+  margin-left: 32px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

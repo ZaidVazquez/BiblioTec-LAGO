@@ -1,0 +1,81 @@
+<div class="card col-md-4 mt-6 mx-auto">
+  <div class="card-header bt-info text-center">
+    <h5 style="color: slateblue">Registrarse</h5>
+  </div>
+  <form action="ingresar" #usuarioForm="ngForm" id="form">
+    <img
+    src="../../../assets/pics/logocreobien.png"
+    alt="HTML5 Icon"
+    width="128"
+    height="150"
+    >
+    <div class=" mb-3">
+      <div class="icono">
+        <i class="fa-solid fa-id-card"></i>
+        <input type="text" class="form-control" name="id_usuario" id="id_usuario" [(ngModel)]="usuariosService.usuario.id_usuario" placeholder="Numero de Control" required/>
+        
+      </div>
+    </div>
+    <div class=" mb-3 mt-3">
+      <div class="icono">
+        <i class="fa-solid fa-user"></i>
+      </div>
+      <input type="text" class="form-control" name="usuario" id="usuario"  [(ngModel)]="usuariosService.usuario.usuario" placeholder="Nombre Completo" required/>
+      
+    </div>
+    <div class=" mb-3">
+      <div class="icono">
+        <i class="fa-solid fa-envelope"></i>
+      </div>
+      <input
+      name="correo" [(ngModel)]="usuariosService.usuario.correo"
+      id="correo"
+        type="email"
+        class="form-control"
+        aria-describedby="emailHelp"
+        placeholder="Correo Electrónico"
+        required
+      />
+      
+    </div>
+    <div class=" mb-3">
+        <div class="icono">
+          <i class="fa-solid fa-key"></i>
+        </div>
+        <input
+        name="contrasena" [(ngModel)]="usuariosService.usuario.contrasena"
+          type="password"
+          class="form-control"
+          id="contrasena"
+          placeholder="Contraseña"
+          required
+        />
+        
+      </div>
+      <div class=" mb-3">
+        <div class="icono">
+            <i class="fa-solid fa-arrow-rotate-right"></i>
+        </div>
+        <input
+        name="contrasena" [(ngModel)]="usuariosService.usuario.contrasena"
+        type="password "
+          type="password"
+          class="form-control"
+          id="contrasena2"
+          placeholder="Repetir Contraseña" 
+          required
+        />
+        
+      </div>
+      <button id="guardar" value="guardar" (click)="createUsuario(usuarioForm)" class="btn btn-secondary">Registrate</button>
+    <div id="emailHelp" class="form-text">
+      Al registrarte, aceptas nuestras Condiciones de uso y Política de
+      privacidad
+    </div>
+    <br />
+    <div id="emailHelp" class="form-text">
+      ¿Ya tienes una cuenta? <a href="ingresar">Iniciar Sesion</a>
+    </div>
+    
+  </form>
+</div>

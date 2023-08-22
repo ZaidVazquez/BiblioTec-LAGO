@@ -1,0 +1,28 @@
+.full-width {
+  width: 100%;
+}
+
+.contenedor {
+  /* height: 75vh; */
+  padding: 10px;
+}
+
+.formulario {
+  background-color: slateblue;
+  color: white;
+  font-family: Verdana, Tahoma, sans-serif;
+  padding: 10px 10px;
+}
+
+.btn-actions {
+  height: 50px;
+  border-radius: 10px;
+}
+.row{
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+.table{
+  float: right;
+}
